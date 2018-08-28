@@ -19,6 +19,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     NSLog(@"本地主干代码");
+
+    NSLog(@"我的分组代码代码");
     
 }
 
