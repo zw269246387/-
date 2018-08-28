@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSLog(@"我的分组代码代码");
+    
 }
 
 - (void)didReceiveMemoryWarning {
