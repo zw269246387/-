@@ -15,6 +15,7 @@
 		0F4594FD213538A900CC9DDD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4594FC213538A900CC9DDD /* main.m */; };
 		0F459507213538AA00CC9DDD /* ____________Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F459506213538AA00CC9DDD /* ____________Tests.m */; };
 		0F459512213538AA00CC9DDD /* ____________UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F459511213538AA00CC9DDD /* ____________UITests.m */; };
+		0F4595212136320300CC9DDD /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F45951F2136320300CC9DDD /* NSString+Hash.m */; };
 		8F9A2438FCCA6228C73ACE2D /* libPods-加密登录-钥匙串存储密码.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1CC7284711B6CDA3657D6F /* libPods-加密登录-钥匙串存储密码.a */; };
 /* End PBXBuildFile section */
 
@@ -48,11 +49,14 @@
 		0F4594FB213538A900CC9DDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F4594FC213538A900CC9DDD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0F459502213538AA00CC9DDD /* 加密登录-钥匙串存储密码Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "加密登录-钥匙串存储密码Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F459506213538AA00CC9DDD /* ____________Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ____________Tests.m; sourceTree = "<group>"; };
+		0F459506213538AA00CC9DDD /* ____________Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____________Tests.m"; sourceTree = "<group>"; };
 		0F459508213538AA00CC9DDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F45950D213538AA00CC9DDD /* 加密登录-钥匙串存储密码UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "加密登录-钥匙串存储密码UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F459511213538AA00CC9DDD /* ____________UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ____________UITests.m; sourceTree = "<group>"; };
+		0F459511213538AA00CC9DDD /* ____________UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____________UITests.m"; sourceTree = "<group>"; };
 		0F459513213538AA00CC9DDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F45951F2136320300CC9DDD /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
+		0F4595202136320300CC9DDD /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
+		0F4595222136497200CC9DDD /* 加密登录-钥匙串存储密码.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "加密登录-钥匙串存储密码.entitlements"; sourceTree = "<group>"; };
 		60E2219155F5D2E9CF5108AF /* Pods-加密登录-钥匙串存储密码.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-加密登录-钥匙串存储密码.release.xcconfig"; path = "Pods/Target Support Files/Pods-加密登录-钥匙串存储密码/Pods-加密登录-钥匙串存储密码.release.xcconfig"; sourceTree = "<group>"; };
 		9B1CC7284711B6CDA3657D6F /* libPods-加密登录-钥匙串存储密码.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-加密登录-钥匙串存储密码.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -108,6 +112,9 @@
 		0F4594EC213538A700CC9DDD /* 加密登录-钥匙串存储密码 */ = {
 			isa = PBXGroup;
 			children = (
+				0F4595222136497200CC9DDD /* 加密登录-钥匙串存储密码.entitlements */,
+				0F4595202136320300CC9DDD /* NSString+Hash.h */,
+				0F45951F2136320300CC9DDD /* NSString+Hash.m */,
 				0F4594ED213538A700CC9DDD /* AppDelegate.h */,
 				0F4594EE213538A700CC9DDD /* AppDelegate.m */,
 				0F4594F0213538A700CC9DDD /* ViewController.h */,
@@ -226,6 +233,11 @@
 				TargetAttributes = {
 					0F4594E9213538A700CC9DDD = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					0F459501213538AA00CC9DDD = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -324,9 +336,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-加密登录-钥匙串存储密码/Pods-加密登录-钥匙串存储密码-resources.sh",
+				"${PODS_ROOT}/SSKeychain/Support/SSKeychain.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SSKeychain.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -341,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F4594F2213538A700CC9DDD /* ViewController.m in Sources */,
+				0F4595212136320300CC9DDD /* NSString+Hash.m in Sources */,
 				0F4594FD213538A900CC9DDD /* main.m in Sources */,
 				0F4594EF213538A700CC9DDD /* AppDelegate.m in Sources */,
 			);
@@ -512,11 +528,15 @@
 			baseConfigurationReference = 06C8135EFDC623466FC14E46 /* Pods-加密登录-钥匙串存储密码.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "加密登录-钥匙串存储密码/加密登录-钥匙串存储密码.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UM7EZDD4PZ;
 				INFOPLIST_FILE = "加密登录-钥匙串存储密码/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ImageResizing.------------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -528,11 +548,15 @@
 			baseConfigurationReference = 60E2219155F5D2E9CF5108AF /* Pods-加密登录-钥匙串存储密码.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "加密登录-钥匙串存储密码/加密登录-钥匙串存储密码.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UM7EZDD4PZ;
 				INFOPLIST_FILE = "加密登录-钥匙串存储密码/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ImageResizing.------------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -545,7 +569,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "加密登录-钥匙串存储密码Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ImageResizing.------------Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -559,7 +587,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "加密登录-钥匙串存储密码Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ImageResizing.------------Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -572,7 +604,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "加密登录-钥匙串存储密码UITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ImageResizing.------------UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -585,7 +621,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "加密登录-钥匙串存储密码UITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ImageResizing.------------UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
